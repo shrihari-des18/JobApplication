@@ -19,20 +19,20 @@ public class CompanyController {
     }
 
     @GetMapping("company/{companyId}")
-    public Company getCompany(@PathVariable("companyId") int companyId) {
+    public Company getCompany(@PathVariable("companyId") Long companyId) {
         return companyService.getCompany(companyId);
     }
 
     @PostMapping(path = "company", consumes = {"application/json"})
     public Company addCompany(@RequestBody Company company) {
         companyService.addCompany(company);
-        return companyService.getCompany(company.getCompanyId());
+        return companyService.getCompany((long) company.getCompanyId());
     }
 
     @PutMapping("company")
     public Company updateCompany(@RequestBody Company company) {
         companyService.updateCompany(company);
-        return companyService.getCompany(company.getCompanyId());
+        return companyService.getCompany((long) company.getCompanyId());
     }
 
     @DeleteMapping("company/{companyId}")

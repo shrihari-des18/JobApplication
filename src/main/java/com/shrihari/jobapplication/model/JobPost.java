@@ -26,5 +26,4 @@ public class JobPost {
     private String postDate;
     private List<String> postTechStack;
 
-
 }

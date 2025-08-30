@@ -18,9 +18,9 @@ public class AdminController {
         return adminService.getAllUsers();
     }
 
-    @PutMapping("admin/blockUser/{userId}")
-    public String blockUser(@PathVariable("userId") int userId) {
-        adminService.blockUser(userId);
+    @PutMapping("admin/blockUser/{Id}")
+    public String blockUser(@PathVariable("Id") int Id) {
+        adminService.blockUser(Id);
         return "User Blocked";
     }
 
